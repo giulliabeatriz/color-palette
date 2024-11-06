@@ -7,10 +7,22 @@
     <title>Gerador de Paleta de Cores</title>
 </head>
 <body>
+
+<div id="container">
     <h1>Gerador de Paleta de Cores</h1>
-    <input type="file" id="upload" accept="image/*">
-    <canvas id="canvas" style="display: none;"></canvas>
-    <div id="palette"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#E6A192" fill-opacity="1" d="M0,192L30,170.7C60,149,120,107,180,117.3C240,128,300,192,360,202.7C420,213,480,171,540,165.3C600,160,660,192,720,197.3C780,203,840,181,900,192C960,203,1020,245,1080,245.3C1140,245,1200,203,1260,165.3C1320,128,1380,96,1410,80L1440,64L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
+    </svg>
+    
+    <div id="second-part">
+        <div id="design-button">    
+            <input type="file" id="upload" accept="image/*">
+
+            <canvas id="canvas" style="display: none;"></canvas>
+        </div>
+        <div id="palette"></div>
+    </div>
+</div>
 
     <script src="script.js" defer></script>
 </body>

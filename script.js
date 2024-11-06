@@ -36,13 +36,23 @@ function extractColors(data) {
     return sortedColors;
 }
 
+function rgbToHex(r, g, b) {
+    return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase()}`;
+}
+
 function displayPalette(colors) {
     const palette = document.getElementById('palette');
     palette.innerHTML = '';
+
     colors.forEach(color => {
+        const [r, g, b] = color.match(/\d+/g).map(Number);
+        const hexColor = rgbToHex(r, g, b);
+
         const box = document.createElement('div');
         box.className = 'color-box';
         box.style.backgroundColor = color;
+        box.innerText = hexColor; // Exibe o código hexadecimal
+
         palette.appendChild(box);
     });
 }
