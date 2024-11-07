@@ -1,7 +1,3 @@
- document.getElementById('upload').addEventListener('change', function() {
-     alert("Imagem selecionada!");
- });
-
 document.getElementById('upload').addEventListener('change', function(event) {
     const file = event.target.files[0];
     if (!file) return;
@@ -44,6 +40,16 @@ function extractColors(data) {
 function rgbToHex(r, g, b) {
     return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase()}`;
 }
+
+// mostra a imagem escolhida
+document.getElementById('upload').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const imagePreview = document.getElementById('imagePreview');
+        imagePreview.src = URL.createObjectURL(file);
+        imagePreview.style.display = 'block'; 
+    }
+});
 
 // mostra as cores pela div palette
 function displayPalette(colors) {
