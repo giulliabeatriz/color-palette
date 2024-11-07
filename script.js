@@ -63,7 +63,7 @@ function displayPalette(colors) {
         const box = document.createElement('div');
         box.className = 'color-box';
         box.style.backgroundColor = color;
-        box.innerText = hexColor; // mostra o hex ** mudar
+        box.innerText = hexColor; // mostra o hex
         palette.appendChild(box);
     });
 }
